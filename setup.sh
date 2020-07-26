@@ -19,16 +19,16 @@ echo "Reconfiguring MySQL Server to run as root."
 sed -i -r -e 's/user\s+= mysql/user = root/' /etc/mysql/my.cnf &> /dev/null
 /etc/init.d/mysql restart &> /dev/null
 
-echo "Making /etc/shadow world-readable/writable."
+echo "Brindando permisos r/w /etc/shadow"
 chmod o+rw /etc/shadow &> /dev/null
 
-echo "Making /etc/passwd world-writable."
+echo "Brindando permisos r/w /etc/passwd"
 chmod o+w /etc/passwd &> /dev/null
 
-echo "Adding LD_LIBRARY_PATH to /etc/sudoers."
+echo "Agregando LD_LIBRARY_PATH al archivo /etc/sudoers."
 sed -i -r -e 's/env_keep\+=LD_PRELOAD/env_keep+=LD_PRELOAD\nDefaults env_keep+=LD_LIBRARY_PATH/' /etc/sudoers &> /dev/null
 
-echo "Changing OpenVPN credentials."
+echo "Modificando credenciales OpenVPN."
 sed -i -r -e 's/user/root/' /etc/openvpn/auth.txt &> /dev/null
 sed -i -r -e 's/password321/password123/' /etc/openvpn/auth.txt &> /dev/null
 
@@ -75,4 +75,4 @@ $cfg['Servers'][$i]['AllowNoPassword'] = true;
 $cfg['Lang'] = '';" > /var/www/.config.inc.php
 
 echo ""
-echo "Done."
+echo "Script Finalizado."

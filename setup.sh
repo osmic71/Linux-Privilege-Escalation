@@ -32,7 +32,7 @@ echo "Modificando credenciales OpenVPN."
 sed -i -r -e 's/user/root/' /etc/openvpn/auth.txt &> /dev/null
 sed -i -r -e 's/password321/password123/' /etc/openvpn/auth.txt &> /dev/null
 
-echo "Ceando llave SSH root SSH."
+echo "Ceando llave SSH root."
 mkdir /root/.ssh &> /dev/null
 mkdir /var/backups/.ssh &> /dev/null
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcgh/pZzNx2bfwxn35AANJir0V8p/CPSYlpS17IkdYdnf8Y2aAtMfcWi/ZKzxC4Z++8PgJDV/g3Q+qdonZYmspI/xDLEnti1FOTQmhNIZZN5SkTGWnihKZPFic7QsNyx7PA2EFmfSSWO0a72n52aYpuTjRbhJaVO9TUtwQdGvpGBYyBCg4eHFQV10W1iuSdLgaIvlMkfpu3nvGggQKdFz/yy5nJbOBHNuj5O8N7ArdmEE3scN5X0bkmuOdWsOpKOHKxQA2ZRONQJNKyh9TCW6b6lT92X1gKRclGnseDL9CQUqkURNnfpnSDUm1CTBbFQP+IWP6JqmQu4xpVPl0Kr2R root@debian" > /root/.ssh/authorized_keys
